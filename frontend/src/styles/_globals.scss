@@ -1,0 +1,70 @@
+@use 'sass:color';
+@use './variables' as *;
+@use './mixins' as *;
+
+/* Сброс и базовые стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: 1.5;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  place-items: center;
+  color: $text-light;
+  background-color: $background-dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $primary-color;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color-hover;
+  }
+}
+
+button {
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: $background-dark;
+  cursor: pointer;
+  @include transition(border-color);
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+/* Светлая тема */
+@media (prefers-color-scheme: light) {
+  body {
+    color: $text-dark;
+    background-color: $background-light;
+  }
+  button {
+    background-color: $background-light;
+  }
+  a:hover {
+    color: color.adjust($primary-color, $lightness: 15%);
+  }
+}
