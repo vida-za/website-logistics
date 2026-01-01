@@ -1,0 +1,17 @@
+.eventList {
+  width: 320px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.items {
+  overflow-y: auto;
+  flex: 1;
+}
