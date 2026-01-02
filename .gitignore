@@ -77,4 +77,5 @@ Thumbs.db
 *.rej
 
 # === Other ===
-docs/
+docs/*.docx
+docs/*.png
